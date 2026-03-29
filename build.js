@@ -1,14 +1,62 @@
 const fs = require('fs');
 
 const pages = [
-  { name: 'index.html', title: 'Strona główna - Wycinka drzew', heading: 'Profesjonalna wycinka i pielęgnacja drzew.' },
-  { name: 'o-nas.html', title: 'O nas - Wycinka drzew', heading: 'O firmie Palmar.' },
-  { name: 'kontakt.html', title: 'Kontakt - Wycinka drzew', heading: 'Skontaktuj się z nami.' },
-  { name: 'pielegnacja-zieleni.html', title: 'Pielęgnacja zieleni - Wycinka drzew', heading: 'Pielęgnacja zieleni.' },
-  { name: 'wycinka-drzew.html', title: 'Wycinka drzew - Wycinka drzew', heading: 'Wycinka drzew.' },
-  { name: 'tuje.html', title: 'Tuje - Wycinka drzew', heading: 'Pielęgnacja tui.' },
-  { name: 'cennik.html', title: 'Cennik - Wycinka drzew', heading: 'Indywidualna wycena.' },
-  { name: 'realizacje.html', title: 'Realizacje - Wycinka drzew', heading: 'Nasze realizacje.' }
+  { 
+    name: 'index.html', 
+    title: 'Wycinka Drzew i Pielęgnacja Zieleni Łowicz | Palmar Marcin Czubak', 
+    heading: 'Profesjonalna wycinka i pielęgnacja drzew.',
+    desc: 'Palmar - profesjonalna wycinka drzew (tradycyjna i alpinistyczna), pielęgnacja zieleni, cięcia techniczne i sanitarne na terenie Łowicza i okolic. Szybko i bezpiecznie.',
+    url: 'https://palmar.lowicz.com.pl/'
+  },
+  { 
+    name: 'o-nas.html', 
+    title: 'O firmie Palmar - Wycinka Drzew i Prace Wysokościowe Łowicz', 
+    heading: 'O firmie Palmar.',
+    desc: 'Poznaj firmę Palmar z Łowicza. Od lat świadczymy usługi z zakresu wycinki drzew i utrzymania terenów zielonych. Gwarantujemy jakość, terminowość i konkurencyjne ceny.',
+    url: 'https://palmar.lowicz.com.pl/o-nas.html'
+  },
+  { 
+    name: 'kontakt.html', 
+    title: 'Kontakt | Palmar Wycinka Drzew Łowicz', 
+    heading: 'Skontaktuj się z nami.',
+    desc: 'Skontaktuj się z firmą Palmar. Zadzwoń: 783 672 957 lub napisz: palmar.8776@gmail.com. Łaguszew 17, 99-414 Kocierzew Południowy. Darmowa wycena wycinki drzew.',
+    url: 'https://palmar.lowicz.com.pl/kontakt.html'
+  },
+  { 
+    name: 'pielegnacja-zieleni.html', 
+    title: 'Pielęgnacja Zieleni i Trawników Łowicz | Palmar', 
+    heading: 'Pielęgnacja zieleni.',
+    desc: 'Kompleksowe utrzymanie terenów zielonych: koszenie, aeracja, nawożenie trawników, przycinanie krzewów i żywopłotów. Usługi dla firm i osób prywatnych w Łowiczu.',
+    url: 'https://palmar.lowicz.com.pl/pielegnacja-zieleni.html'
+  },
+  { 
+    name: 'wycinka-drzew.html', 
+    title: 'Wycinka Drzew Alpinistyczna i Tradycyjna Łowicz | Palmar', 
+    heading: 'Wycinka drzew.',
+    desc: 'Bezpieczna wycinka drzew trudnych, sekcyjna, alpinistyczna oraz z podnośnika. Wywóz drewna, zrębkowanie gałęzi i frezowanie pni. Sprawdź naszą ofertę!',
+    url: 'https://palmar.lowicz.com.pl/wycinka-drzew.html'
+  },
+  { 
+    name: 'tuje.html', 
+    title: 'Przycinanie i Pielęgnacja Tui Łowicz | Palmar', 
+    heading: 'Pielęgnacja tui.',
+    desc: 'Profesjonalne cięcie, formowanie i pielęgnacja tui. Zapobiegamy brązowieniu igieł i odpowiednio czyścimy krzewy. Zadbaj o swój żywopłot z firmą Palmar.',
+    url: 'https://palmar.lowicz.com.pl/tuje.html'
+  },
+  { 
+    name: 'cennik.html', 
+    title: 'Cennik Wycinki Drzew i Usług Ogrodniczych | Palmar Łowicz', 
+    heading: 'Indywidualna wycena.',
+    desc: 'Sprawdź, co wpływa na koszt wycinki drzew i pielęgnacji zieleni. Wyceniamy indywidualnie na podstawie wielkości drzewa, stanu zdrowia i otoczenia. Zapraszamy do kontaktu.',
+    url: 'https://palmar.lowicz.com.pl/cennik.html'
+  },
+  { 
+    name: 'realizacje.html', 
+    title: 'Realizacje Wycinki i Pielęgnacji | Galeria Palmar', 
+    heading: 'Nasze realizacje.',
+    desc: 'Zobacz zdjęcia z naszych prac w terenie: wycinka drzew metodą alpinistyczną, pielęgnacja zieleni, przycinanie żywopłotów i formowanie koron. Palmar Łowicz.',
+    url: 'https://palmar.lowicz.com.pl/realizacje.html'
+  }
 ];
 
 const template = (p) => `<!DOCTYPE html>
@@ -17,25 +65,65 @@ const template = (p) => `<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${p.title}</title>
+    <meta name="description" content="${p.desc}">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="${p.title}">
+    <meta property="og:description" content="${p.desc}">
+    <meta property="og:url" content="${p.url}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pl_PL">
+    <meta property="og:site_name" content="Palmar - Wycinka Drzew">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #fcfcfc; color: #111; }
         .group:hover .group-hover\\:block { display: block; }
     </style>
+    ${p.name === 'index.html' ? `
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Palmar Marcin Czubak - Wycinka Drzew",
+      "image": "https://palmar.lowicz.com.pl/wp-content/uploads/2022/11/cropped-Palmar_logo-1.jpg",
+      "@id": "https://palmar.lowicz.com.pl/",
+      "url": "https://palmar.lowicz.com.pl/",
+      "telephone": "+48783672957",
+      "email": "palmar.8776@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Łaguszew 17",
+        "addressLocality": "Kocierzew Południowy",
+        "postalCode": "99-414",
+        "addressCountry": "PL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 52.1700,
+        "longitude": 19.9730
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    }
+    </script>
+    ` : ''}
 </head>
 <body class="antialiased min-h-screen flex flex-col">
 
     <header class="w-full px-6 py-6 flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto border-b border-neutral-100 gap-4">
         <a href="index.html" class="flex items-center text-xl font-medium tracking-tight">
-            <img src="img/logo.jpg" alt="Logo" class="h-10 w-10 mr-3 rounded-full object-cover"> Palmar<span class="text-neutral-500 font-light ml-2 hidden sm:inline">Wycinka Drzew</span>
+            <img src="img/logo.jpg" alt="Logo firmy Palmar - Wycinka drzew" class="h-10 w-10 mr-3 rounded-full object-cover"> Palmar<span class="text-neutral-500 font-light ml-2 hidden sm:inline">Wycinka Drzew</span>
         </a>
         <nav class="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 text-sm font-light text-neutral-600">
             <a href="index.html" class="hover:text-black transition">Główna</a>
             <a href="o-nas.html" class="hover:text-black transition">O nas</a>
             
             <div class="relative group py-2">
-                <button class="hover:text-black transition flex items-center focus:outline-none">
+                <button class="hover:text-black transition flex items-center focus:outline-none" aria-haspopup="true">
                     Usługi 
                     <svg class="w-3 h-3 ml-1 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
@@ -68,7 +156,7 @@ const template = (p) => `<!DOCTYPE html>
                     </div>
                 </div>
                 <div>
-                    <img src="img/main.jpg" alt="Palmar" class="w-full h-80 object-cover rounded-2xl shadow-sm">
+                    <img src="img/main.jpg" alt="Bezpieczna wycinka drzew z podnośnika - Palmar" class="w-full h-80 object-cover rounded-2xl shadow-sm">
                 </div>
             </div>
         ` : ''}
@@ -87,7 +175,7 @@ const template = (p) => `<!DOCTYPE html>
                     </ul>
                 </div>
                 <div class="flex flex-col items-center">
-                    <img src="img/logo.jpg" alt="Logo Palmar" class="w-48 h-48 sm:w-64 sm:h-64 rounded-full shadow-lg border border-gray-100 object-cover">
+                    <img src="img/logo.jpg" alt="Logo Palmar - doświadczona ekipa z Łowicza" class="w-48 h-48 sm:w-64 sm:h-64 rounded-full shadow-lg border border-gray-100 object-cover">
                 </div>
             </div>
         ` : ''}
@@ -109,7 +197,7 @@ const template = (p) => `<!DOCTYPE html>
                 </div>
             </div>
             <div class="mt-12">
-                <img src="img/img1.jpg" alt="Kontakt" class="w-full h-48 sm:h-64 object-cover rounded-2xl shadow-sm object-top">
+                <img src="img/img1.jpg" alt="Pielęgnacja i wycinka drzew kontakt" class="w-full h-48 sm:h-64 object-cover rounded-2xl shadow-sm object-top">
             </div>
         ` : ''}
 
@@ -129,7 +217,7 @@ const template = (p) => `<!DOCTYPE html>
                     </ul>
                 </div>
                 <div class="flex flex-col gap-6">
-                    <img src="img/img5.jpg" alt="Pielęgnacja" class="w-full h-64 object-cover rounded-2xl shadow-sm">
+                    <img src="img/img5.jpg" alt="Pielęgnacja trawników i zieleni przez firmę Palmar" class="w-full h-64 object-cover rounded-2xl shadow-sm">
                 </div>
             </div>
         ` : ''}
@@ -167,7 +255,7 @@ const template = (p) => `<!DOCTYPE html>
                     </ul>
                 </div>
                 
-                <img src="img/img4.jpg" alt="Wycinka" class="w-full h-64 sm:h-80 object-cover rounded-2xl shadow-sm mt-8 object-top">
+                <img src="img/img4.jpg" alt="Bezpieczna wycinka drzew trudnych i sekcyjnych" class="w-full h-64 sm:h-80 object-cover rounded-2xl shadow-sm mt-8 object-top">
             </div>
         ` : ''}
 
@@ -186,7 +274,7 @@ const template = (p) => `<!DOCTYPE html>
                     <p class="text-lg font-medium">Chętnie pomożemy Ci profesjonalnie zadbać o Twoje tuje.</p>
                 </div>
                 <div>
-                    <img src="img/img3.jpg" alt="Tuje" class="w-full h-80 sm:h-96 object-cover rounded-2xl shadow-sm object-bottom">
+                    <img src="img/img3.jpg" alt="Pielęgnacja i przycinanie tui w ogrodzie" class="w-full h-80 sm:h-96 object-cover rounded-2xl shadow-sm object-bottom">
                 </div>
             </div>
         ` : ''}
@@ -215,7 +303,7 @@ const template = (p) => `<!DOCTYPE html>
                         <p class="leading-relaxed">Oferujemy pakiety od samej wycinki po kompleksowe zrębkowanie, wywóz urobku, frezowanie pni. Brak bezpośredniego dojazdu ciężkiego sprzętu również wpływa na wycenę.</p>
                     </div>
                 </div>
-                <img src="img/img6.jpg" alt="Cennik i Praca" class="w-full h-64 sm:h-80 object-cover rounded-2xl shadow-sm mt-12 object-bottom">
+                <img src="img/img6.jpg" alt="Frezowanie pni i prace glebowe - sprzęt Palmar" class="w-full h-64 sm:h-80 object-cover rounded-2xl shadow-sm mt-12 object-bottom">
             </div>
         ` : ''}
 
@@ -223,12 +311,12 @@ const template = (p) => `<!DOCTYPE html>
             <div class="max-w-5xl w-full">
                 <p class="text-lg text-neutral-500 font-light leading-relaxed mb-12">Oto kilka zdjęć z naszych ostatnich realizacji w terenie.</p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <img src="img/img4.jpg" alt="Realizacja 1" class="w-full h-64 object-cover rounded-xl shadow-sm object-top">
-                    <img src="img/img2.jpg" alt="Realizacja 2" class="w-full h-64 object-cover rounded-xl shadow-sm">
-                    <img src="img/img3.jpg" alt="Realizacja 3" class="w-full h-64 object-cover rounded-xl shadow-sm object-bottom">
-                    <img src="img/img1.jpg" alt="Realizacja 4" class="w-full h-64 object-cover rounded-xl shadow-sm object-top">
-                    <img src="img/img5.jpg" alt="Realizacja 5" class="w-full h-64 object-cover rounded-xl shadow-sm">
-                    <img src="img/img6.jpg" alt="Realizacja 6" class="w-full h-64 object-cover rounded-xl shadow-sm object-bottom">
+                    <img src="img/img4.jpg" alt="Wycinka alpinistyczna drzewa realizacja" class="w-full h-64 object-cover rounded-xl shadow-sm object-top">
+                    <img src="img/img2.jpg" alt="Pielęgnacja terenów zielonych realizacja" class="w-full h-64 object-cover rounded-xl shadow-sm">
+                    <img src="img/img3.jpg" alt="Cięcie żywopłotu z tui realizacja" class="w-full h-64 object-cover rounded-xl shadow-sm object-bottom">
+                    <img src="img/img1.jpg" alt="Praca pilarza przy wycince drzewa realizacja" class="w-full h-64 object-cover rounded-xl shadow-sm object-top">
+                    <img src="img/img5.jpg" alt="Utrzymanie zieleni miejskiej realizacja" class="w-full h-64 object-cover rounded-xl shadow-sm">
+                    <img src="img/img6.jpg" alt="Prace zrębkowania gałęzi realizacja" class="w-full h-64 object-cover rounded-xl shadow-sm object-bottom">
                 </div>
             </div>
         ` : ''}
