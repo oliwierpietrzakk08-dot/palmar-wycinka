@@ -5,7 +5,7 @@ const pages = [
   { name: 'o-nas.html', title: 'O nas - Wycinka drzew', heading: 'O firmie Palmar.' },
   { name: 'kontakt.html', title: 'Kontakt - Wycinka drzew', heading: 'Skontaktuj się z nami.' },
   { name: 'pielegnacja-zieleni.html', title: 'Pielęgnacja zieleni - Wycinka drzew', heading: 'Pielęgnacja zieleni.' },
-  { name: 'wycinka-drzew.html', title: 'Wycinka drzew - Palmar', heading: 'Wycinka drzew.' },
+  { name: 'wycinka-drzew.html', title: 'Wycinka drzew - Wycinka drzew', heading: 'Wycinka drzew.' },
   { name: 'tuje.html', title: 'Tuje - Wycinka drzew', heading: 'Pielęgnacja tui.' },
   { name: 'cennik.html', title: 'Cennik - Wycinka drzew', heading: 'Cennik naszych usług.' },
   { name: 'realizacje.html', title: 'Realizacje - Wycinka drzew', heading: 'Nasze realizacje.' }
@@ -43,7 +43,67 @@ const template = (p) => `<!DOCTYPE html>
         ${p.name === 'index.html' ? `
             <p class="text-lg text-neutral-500 font-light mb-12 max-w-xl leading-relaxed">Specjalizujemy się w bezpiecznej wycince drzew, pielęgnacji zieleni i pracach wysokościowych. Działamy szybko, precyzyjnie i bezpiecznie.</p>
             <a href="kontakt.html" class="inline-block bg-black text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-neutral-800 transition">Sprawdź ofertę</a>
-        ` : '<p class="text-neutral-500 font-light">Treść w przygotowaniu...</p>'}
+        ` : ''}
+
+        ${p.name === 'o-nas.html' ? `
+            <div class="max-w-3xl">
+                <p class="text-lg text-neutral-500 font-light mb-8 leading-relaxed">Firma PALMAR powstała w 2021 roku, ale doświadczenie naszej załogi jest wieloletnie. Działamy głównie na terenie powiatu łowickiego, podejmując się również zleceń z innych obszarów. Pomagamy w zaprojektowaniu i utrzymaniu ogrodów oraz terenów zielonych.</p>
+                <h3 class="text-xl font-medium mb-6 mt-12">Co nas wyróżnia?</h3>
+                <ul class="space-y-4 text-neutral-500 font-light">
+                    <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4"></span> Jakość – budujemy na zaufaniu.</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4"></span> Terminowość – szanujemy Twój czas.</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4"></span> Konkurencyjne ceny.</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4"></span> Indywidualne podejście.</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4"></span> Najnowszy park maszynowy i własny transport.</li>
+                </ul>
+            </div>
+        ` : ''}
+
+        ${p.name === 'kontakt.html' ? `
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-neutral-500 font-light">
+                <div>
+                    <h3 class="text-black font-medium text-lg mb-6">Informacje kontaktowe</h3>
+                    <p class="mb-2"><strong class="font-medium text-black">Palmar - Marcin Czubak</strong></p>
+                    <p class="mb-2">Łaguszew 17</p>
+                    <p class="mb-6">99-414 Łaguszew (Kocierzew Południowy)</p>
+                    <p class="mb-2"><strong class="font-medium text-black">Email:</strong> <a href="mailto:palmar.8776@gmail.com" class="hover:text-black transition">palmar.8776@gmail.com</a></p>
+                    <p class="mb-2"><strong class="font-medium text-black">Telefon:</strong> <a href="tel:783672957" class="hover:text-black transition">783 672 957</a></p>
+                </div>
+                <div>
+                    <h3 class="text-black font-medium text-lg mb-6">Godziny otwarcia</h3>
+                    <p class="mb-2">Poniedziałek — Piątek</p>
+                    <p class="text-black font-medium">08:00 - 18:00</p>
+                </div>
+            </div>
+        ` : ''}
+
+        ${p.name === 'pielegnacja-zieleni.html' ? `
+            <div class="max-w-3xl">
+                <p class="text-lg text-neutral-500 font-light leading-relaxed mb-8">Oferujmy usługi : pielęgnacja i utrzymania terenów zielonych na działkach prywatnych oraz terenach przemysłowych, sportowych oraz w miejscach publicznych. Świadczymy usługi w zakresie pielęgnacji i utrzymania terenów zieleni w cyklach wieloletnich oraz interwencyjnie.</p>
+                <h3 class="text-xl font-medium mb-6 mt-12">Oferujemy takie usługi jak:</h3>
+                <ul class="space-y-4 text-neutral-500 font-light">
+                    <li>koszenie trawy,</li>
+                    <li>przycinanie krzewów, żywopłotów,</li>
+                    <li>karczowanie zarośli,</li>
+                    <li>wykaszanie przerośniętych traw, zarośli</li>
+                    <li>cięcia formujące, odmładzające, korygujące roślin,</li>
+                    <li>odchwaszczanie,</li>
+                    <li>wycinka i pielęgnacja drzew,</li>
+                    <li>ścinkę i formowanie drzew,</li>
+                    <li>sadzenie drzew i krzewów,</li>
+                    <li>nawożenie trawników oraz drzew, krzewów i bylin,</li>
+                    <li>renowacja trawników,</li>
+                    <li>podlewanie, nawożenie trawników,</li>
+                    <li>aeracja trawników,</li>
+                    <li>ochrona chemiczna roślin przed owadami i grzybami</li>
+                </ul>
+            </div>
+        ` : ''}
+
+        ${!['index.html', 'o-nas.html', 'kontakt.html', 'pielegnacja-zieleni.html'].includes(p.name) ? `
+            <p class="text-neutral-500 font-light">Treść w przygotowaniu na podstawie kolejnych linków...</p>
+        ` : ''}
+
     </main>
 
     <footer class="w-full px-8 py-10 max-w-5xl mx-auto border-t border-neutral-100 mt-auto text-center">
@@ -54,8 +114,3 @@ const template = (p) => `<!DOCTYPE html>
 </html>`;
 
 pages.forEach(p => fs.writeFileSync(p.name, template(p)));
-
-// Cleanup old uslugi.html
-if (fs.existsSync('uslugi.html')) {
-  fs.unlinkSync('uslugi.html');
-}
