@@ -7,7 +7,7 @@ const pages = [
   { name: 'pielegnacja-zieleni.html', title: 'Pielęgnacja zieleni - Wycinka drzew', heading: 'Pielęgnacja zieleni.' },
   { name: 'wycinka-drzew.html', title: 'Wycinka drzew - Wycinka drzew', heading: 'Wycinka drzew.' },
   { name: 'tuje.html', title: 'Tuje - Wycinka drzew', heading: 'Pielęgnacja tui.' },
-  { name: 'cennik.html', title: 'Cennik - Wycinka drzew', heading: 'Cennik naszych usług.' },
+  { name: 'cennik.html', title: 'Cennik - Wycinka drzew', heading: 'Indywidualna wycena.' },
   { name: 'realizacje.html', title: 'Realizacje - Wycinka drzew', heading: 'Nasze realizacje.' }
 ];
 
@@ -150,7 +150,34 @@ const template = (p) => `<!DOCTYPE html>
             </div>
         ` : ''}
 
-        ${!['index.html', 'o-nas.html', 'kontakt.html', 'pielegnacja-zieleni.html', 'wycinka-drzew.html', 'tuje.html'].includes(p.name) ? `
+        ${p.name === 'cennik.html' ? `
+            <div class="max-w-4xl text-neutral-500 font-light">
+                <p class="text-lg leading-relaxed mb-12">Nie posiadamy ściśle ustalonego cennika. Każde zlecenie wyceniamy indywidualnie po dokładnych oględzinach miejsca planowanych prac. Cena zależy od samej rośliny oraz jej najbliższego otoczenia.</p>
+                
+                <h3 class="text-2xl text-black font-medium mb-8">Przy wycenie bierzemy pod uwagę:</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div>
+                        <h4 class="text-lg text-black font-medium mb-3">Wielkość drzewa</h4>
+                        <p class="leading-relaxed">Wysokość i średnica wpływają na czas pracy, zużycie sprzętu i ilość urobku do wywiezienia. Wspinaczka na wysokie drzewa wiąże się z większym ryzykiem.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg text-black font-medium mb-3">Stan zdrowia drzewa</h4>
+                        <p class="leading-relaxed">Spróchniałe lub chore drzewa często wymagają użycia podnośnika koszowego, co generuje dodatkowe koszty. Praca musi być wykonana z dużą precyzją.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg text-black font-medium mb-3">Otoczenie drzewa</h4>
+                        <p class="leading-relaxed">Ścinka z gruntu na otwartej przestrzeni jest tańsza. Praca w pobliżu budynków, ogrodzeń czy linii energetycznych wymaga technik alpinistycznych i ostrożnego opuszczania gałęzi na linach.</p>
+                    </div>
+                    <div>
+                        <h4 class="text-lg text-black font-medium mb-3">Zakres usług i dojazd</h4>
+                        <p class="leading-relaxed">Oferujemy pakiety od samej wycinki po kompleksowe zrębkowanie, wywóz urobku, frezowanie pni. Brak bezpośredniego dojazdu ciężkiego sprzętu również wpływa na wycenę.</p>
+                    </div>
+                </div>
+            </div>
+        ` : ''}
+
+        ${!['index.html', 'o-nas.html', 'kontakt.html', 'pielegnacja-zieleni.html', 'wycinka-drzew.html', 'tuje.html', 'cennik.html'].includes(p.name) ? `
             <p class="text-neutral-500 font-light">Treść w przygotowaniu na podstawie kolejnych linków...</p>
         ` : ''}
 
