@@ -24,7 +24,9 @@ const template = (p) => `<!DOCTYPE html>
 <body class="antialiased min-h-screen flex flex-col">
 
     <header class="w-full px-8 py-8 flex flex-col items-center max-w-6xl mx-auto gap-8 border-b border-neutral-100">
-        <a href="index.html" class="text-2xl font-medium tracking-tight">Palmar<span class="text-neutral-500 font-light ml-2">Wycinka Drzew</span></a>
+        <a href="index.html" class="flex items-center text-2xl font-medium tracking-tight">
+            <img src="img/logo.jpg" alt="Logo" class="h-10 w-auto mr-4 rounded-full"> Palmar<span class="text-neutral-500 font-light ml-2">Wycinka Drzew</span>
+        </a>
         <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm font-light text-neutral-600">
             <a href="index.html" class="hover:text-black transition">Strona główna</a>
             <a href="o-nas.html" class="hover:text-black transition">O nas</a>
@@ -65,8 +67,8 @@ const template = (p) => `<!DOCTYPE html>
                         <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4"></span> Najnowszy park maszynowy i własny transport.</li>
                     </ul>
                 </div>
-                <div>
-                    <img src="img/img1.jpg" alt="Ekipa Palmar" class="w-full h-96 object-cover rounded-2xl shadow-sm">
+                <div class="flex flex-col items-center">
+                    <img src="img/logo.jpg" alt="Logo Palmar" class="w-48 h-48 rounded-full shadow-lg border border-gray-100 object-cover">
                 </div>
             </div>
         ` : ''}
@@ -88,7 +90,7 @@ const template = (p) => `<!DOCTYPE html>
                 </div>
             </div>
             <div class="mt-12">
-                <img src="img/img5.jpg" alt="Kontakt" class="w-full h-64 object-cover rounded-2xl shadow-sm">
+                <img src="img/img1.jpg" alt="Kontakt" class="w-full h-64 object-cover rounded-2xl shadow-sm object-top">
             </div>
         ` : ''}
 
@@ -107,8 +109,8 @@ const template = (p) => `<!DOCTYPE html>
                         <li>ochrona chemiczna roślin przed owadami i grzybami</li>
                     </ul>
                 </div>
-                <div>
-                    <img src="img/img2.jpg" alt="Pielęgnacja" class="w-full h-full object-cover rounded-2xl shadow-sm">
+                <div class="flex flex-col gap-6">
+                    <img src="img/img5.jpg" alt="Pielęgnacja" class="w-full h-64 object-cover rounded-2xl shadow-sm">
                 </div>
             </div>
         ` : ''}
@@ -146,7 +148,7 @@ const template = (p) => `<!DOCTYPE html>
                     </ul>
                 </div>
                 
-                <img src="img/img3.jpg" alt="Wycinka" class="w-full h-80 object-cover rounded-2xl shadow-sm mt-8">
+                <img src="img/img4.jpg" alt="Wycinka" class="w-full h-80 object-cover rounded-2xl shadow-sm mt-8 object-top">
             </div>
         ` : ''}
 
@@ -165,7 +167,7 @@ const template = (p) => `<!DOCTYPE html>
                     <p class="text-lg font-medium">Chętnie pomożemy Ci profesjonalnie zadbać o Twoje tuje.</p>
                 </div>
                 <div>
-                    <img src="img/img4.jpg" alt="Tuje" class="w-full h-96 object-cover rounded-2xl shadow-sm">
+                    <img src="img/img3.jpg" alt="Tuje" class="w-full h-96 object-cover rounded-2xl shadow-sm object-bottom">
                 </div>
             </div>
         ` : ''}
@@ -194,7 +196,7 @@ const template = (p) => `<!DOCTYPE html>
                         <p class="leading-relaxed">Oferujemy pakiety od samej wycinki po kompleksowe zrębkowanie, wywóz urobku, frezowanie pni. Brak bezpośredniego dojazdu ciężkiego sprzętu również wpływa na wycenę.</p>
                     </div>
                 </div>
-                <img src="img/img6.jpg" alt="Cennik i Praca" class="w-full h-80 object-cover rounded-2xl shadow-sm mt-12">
+                <img src="img/img6.jpg" alt="Cennik i Praca" class="w-full h-80 object-cover rounded-2xl shadow-sm mt-12 object-bottom">
             </div>
         ` : ''}
 
@@ -202,12 +204,12 @@ const template = (p) => `<!DOCTYPE html>
             <div class="max-w-5xl">
                 <p class="text-lg text-neutral-500 font-light leading-relaxed mb-12">Oto kilka zdjęć z naszych ostatnich realizacji w terenie.</p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                    <img src="img/img1.jpg" alt="Realizacja 1" class="w-full h-64 object-cover rounded-xl shadow-sm">
+                    <img src="img/img4.jpg" alt="Realizacja 1" class="w-full h-64 object-cover rounded-xl shadow-sm object-top">
                     <img src="img/img2.jpg" alt="Realizacja 2" class="w-full h-64 object-cover rounded-xl shadow-sm">
-                    <img src="img/img3.jpg" alt="Realizacja 3" class="w-full h-64 object-cover rounded-xl shadow-sm">
-                    <img src="img/img4.jpg" alt="Realizacja 4" class="w-full h-64 object-cover rounded-xl shadow-sm">
+                    <img src="img/img3.jpg" alt="Realizacja 3" class="w-full h-64 object-cover rounded-xl shadow-sm object-bottom">
+                    <img src="img/img1.jpg" alt="Realizacja 4" class="w-full h-64 object-cover rounded-xl shadow-sm object-top">
                     <img src="img/img5.jpg" alt="Realizacja 5" class="w-full h-64 object-cover rounded-xl shadow-sm">
-                    <img src="img/img6.jpg" alt="Realizacja 6" class="w-full h-64 object-cover rounded-xl shadow-sm">
+                    <img src="img/img6.jpg" alt="Realizacja 6" class="w-full h-64 object-cover rounded-xl shadow-sm object-bottom">
                 </div>
             </div>
         ` : ''}
