@@ -41,21 +41,33 @@ const template = (p) => `<!DOCTYPE html>
         <h1 class="text-4xl md:text-5xl font-light mb-16 tracking-tight max-w-2xl">${p.heading}</h1>
         
         ${p.name === 'index.html' ? `
-            <p class="text-lg text-neutral-500 font-light mb-12 max-w-xl leading-relaxed">Specjalizujemy się w bezpiecznej wycince drzew, pielęgnacji zieleni i pracach wysokościowych. Działamy szybko, precyzyjnie i bezpiecznie.</p>
-            <a href="kontakt.html" class="inline-block bg-black text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-neutral-800 transition">Sprawdź ofertę</a>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-lg text-neutral-500 font-light mb-12 max-w-xl leading-relaxed">Specjalizujemy się w bezpiecznej wycince drzew, pielęgnacji zieleni i pracach wysokościowych. Działamy szybko, precyzyjnie i bezpiecznie.</p>
+                    <a href="kontakt.html" class="inline-block bg-black text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-neutral-800 transition">Sprawdź ofertę</a>
+                </div>
+                <div>
+                    <img src="img/main.jpg" alt="Palmar" class="w-full h-80 object-cover rounded-2xl shadow-sm">
+                </div>
+            </div>
         ` : ''}
 
         ${p.name === 'o-nas.html' ? `
-            <div class="max-w-3xl">
-                <p class="text-lg text-neutral-500 font-light mb-8 leading-relaxed">Firma PALMAR powstała w 2021 roku, ale doświadczenie naszej załogi jest wieloletnie. Działamy głównie na terenie powiatu łowickiego, podejmując się również zleceń z innych obszarów. Pomagamy w zaprojektowaniu i utrzymaniu ogrodów oraz terenów zielonych.</p>
-                <h3 class="text-xl font-medium mb-6 mt-12">Co nas wyróżnia?</h3>
-                <ul class="space-y-4 text-neutral-500 font-light">
-                    <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4"></span> Jakość – budujemy na zaufaniu.</li>
-                    <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4"></span> Terminowość – szanujemy Twój czas.</li>
-                    <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4"></span> Konkurencyjne ceny.</li>
-                    <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4"></span> Indywidualne podejście.</li>
-                    <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4"></span> Najnowszy park maszynowy i własny transport.</li>
-                </ul>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="max-w-3xl">
+                    <p class="text-lg text-neutral-500 font-light mb-8 leading-relaxed">Firma PALMAR powstała w 2021 roku, ale doświadczenie naszej załogi jest wieloletnie. Działamy głównie na terenie powiatu łowickiego, podejmując się również zleceń z innych obszarów. Pomagamy w zaprojektowaniu i utrzymaniu ogrodów oraz terenów zielonych.</p>
+                    <h3 class="text-xl font-medium mb-6 mt-12">Co nas wyróżnia?</h3>
+                    <ul class="space-y-4 text-neutral-500 font-light">
+                        <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4"></span> Jakość – budujemy na zaufaniu.</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4"></span> Terminowość – szanujemy Twój czas.</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4"></span> Konkurencyjne ceny.</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4"></span> Indywidualne podejście.</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4"></span> Najnowszy park maszynowy i własny transport.</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="img/img1.jpg" alt="Ekipa Palmar" class="w-full h-96 object-cover rounded-2xl shadow-sm">
+                </div>
             </div>
         ` : ''}
 
@@ -75,28 +87,29 @@ const template = (p) => `<!DOCTYPE html>
                     <p class="text-black font-medium">08:00 - 18:00</p>
                 </div>
             </div>
+            <div class="mt-12">
+                <img src="img/img5.jpg" alt="Kontakt" class="w-full h-64 object-cover rounded-2xl shadow-sm">
+            </div>
         ` : ''}
 
         ${p.name === 'pielegnacja-zieleni.html' ? `
-            <div class="max-w-3xl">
-                <p class="text-lg text-neutral-500 font-light leading-relaxed mb-8">Oferujmy usługi : pielęgnacja i utrzymania terenów zielonych na działkach prywatnych oraz terenach przemysłowych, sportowych oraz w miejscach publicznych. Świadczymy usługi w zakresie pielęgnacji i utrzymania terenów zieleni w cyklach wieloletnich oraz interwencyjnie.</p>
-                <h3 class="text-xl font-medium mb-6 mt-12">Oferujemy takie usługi jak:</h3>
-                <ul class="space-y-4 text-neutral-500 font-light">
-                    <li>koszenie trawy,</li>
-                    <li>przycinanie krzewów, żywopłotów,</li>
-                    <li>karczowanie zarośli,</li>
-                    <li>wykaszanie przerośniętych traw, zarośli</li>
-                    <li>cięcia formujące, odmładzające, korygujące roślin,</li>
-                    <li>odchwaszczanie,</li>
-                    <li>wycinka i pielęgnacja drzew,</li>
-                    <li>ścinkę i formowanie drzew,</li>
-                    <li>sadzenie drzew i krzewów,</li>
-                    <li>nawożenie trawników oraz drzew, krzewów i bylin,</li>
-                    <li>renowacja trawników,</li>
-                    <li>podlewanie, nawożenie trawników,</li>
-                    <li>aeracja trawników,</li>
-                    <li>ochrona chemiczna roślin przed owadami i grzybami</li>
-                </ul>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="max-w-3xl">
+                    <p class="text-lg text-neutral-500 font-light leading-relaxed mb-8">Oferujmy usługi : pielęgnacja i utrzymania terenów zielonych na działkach prywatnych oraz terenach przemysłowych, sportowych oraz w miejscach publicznych. Świadczymy usługi w zakresie pielęgnacji i utrzymania terenów zieleni w cyklach wieloletnich oraz interwencyjnie.</p>
+                    <h3 class="text-xl font-medium mb-6 mt-12">Oferujemy takie usługi jak:</h3>
+                    <ul class="space-y-4 text-neutral-500 font-light">
+                        <li>koszenie trawy, przycinanie krzewów, żywopłotów,</li>
+                        <li>karczowanie zarośli, wykaszanie przerośniętych traw,</li>
+                        <li>cięcia formujące, odmładzające, korygujące roślin, odchwaszczanie,</li>
+                        <li>wycinka i pielęgnacja drzew, ścinkę i formowanie drzew,</li>
+                        <li>sadzenie drzew i krzewów, nawożenie trawników,</li>
+                        <li>renowacja i aeracja trawników,</li>
+                        <li>ochrona chemiczna roślin przed owadami i grzybami</li>
+                    </ul>
+                </div>
+                <div>
+                    <img src="img/img2.jpg" alt="Pielęgnacja" class="w-full h-full object-cover rounded-2xl shadow-sm">
+                </div>
             </div>
         ` : ''}
 
@@ -124,7 +137,7 @@ const template = (p) => `<!DOCTYPE html>
                     </div>
                 </div>
 
-                <div class="mt-12">
+                <div class="mt-12 mb-12">
                     <h3 class="text-xl font-medium mb-6">Usługi dodatkowe towarzyszące</h3>
                     <ul class="space-y-3 text-neutral-500 font-light list-disc pl-5">
                         <li>Wywóz oraz utylizacja drewna i gałęzi,</li>
@@ -132,21 +145,28 @@ const template = (p) => `<!DOCTYPE html>
                         <li>Frezowanie pni.</li>
                     </ul>
                 </div>
+                
+                <img src="img/img3.jpg" alt="Wycinka" class="w-full h-80 object-cover rounded-2xl shadow-sm mt-8">
             </div>
         ` : ''}
 
         ${p.name === 'tuje.html' ? `
-            <div class="max-w-3xl">
-                <p class="text-lg text-neutral-500 font-light leading-relaxed mb-8">Tuje przycina się głównie w celu nadania im odpowiedniego kształtu i kontroli wielkości. Zwykle krzewy te tworzą żywopłoty, a cięcie ułatwia formowanie pożądanego kształtu. Zbyt duże krzewy są trudniejsze w pielęgnacji i mają zwiększone zapotrzebowanie na wodę oraz składniki odżywcze.</p>
-                
-                <h3 class="text-xl font-medium mb-6 mt-12">Ważne zasady</h3>
-                <ul class="space-y-4 text-neutral-500 font-light mb-8">
-                    <li class="flex items-start"><span class="w-2 h-2 bg-black rounded-full mt-2 mr-4 shrink-0"></span> Obcinanie tui w niewłaściwym czasie może doprowadzić do przemarznięcia rośliny, brązowienia igieł, a nawet uschnięcia całego krzewu.</li>
-                    <li class="flex items-start"><span class="w-2 h-2 bg-black rounded-full mt-2 mr-4 shrink-0"></span> Zbyt głębokie cięcie sprawia, że gałęzie przestają rosnąć.</li>
-                    <li class="flex items-start"><span class="w-2 h-2 bg-black rounded-full mt-2 mr-4 shrink-0"></span> Zalecamy czyszczenie tui od środka i usuwanie suchych gałązek. Utrzymuje to roślinę w zdrowiu, zapewniając dostęp światła i powietrza do pnia.</li>
-                </ul>
-                
-                <p class="text-lg font-medium">Chętnie pomożemy Ci profesjonalnie zadbać o Twoje tuje.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="max-w-3xl">
+                    <p class="text-lg text-neutral-500 font-light leading-relaxed mb-8">Tuje przycina się głównie w celu nadania im odpowiedniego kształtu i kontroli wielkości. Zwykle krzewy te tworzą żywopłoty, a cięcie ułatwia formowanie pożądanego kształtu. Zbyt duże krzewy są trudniejsze w pielęgnacji i mają zwiększone zapotrzebowanie na wodę oraz składniki odżywcze.</p>
+                    
+                    <h3 class="text-xl font-medium mb-6 mt-12">Ważne zasady</h3>
+                    <ul class="space-y-4 text-neutral-500 font-light mb-8">
+                        <li class="flex items-start"><span class="w-2 h-2 bg-black rounded-full mt-2 mr-4 shrink-0"></span> Obcinanie tui w niewłaściwym czasie może doprowadzić do przemarznięcia rośliny, brązowienia igieł, a nawet uschnięcia całego krzewu.</li>
+                        <li class="flex items-start"><span class="w-2 h-2 bg-black rounded-full mt-2 mr-4 shrink-0"></span> Zbyt głębokie cięcie sprawia, że gałęzie przestają rosnąć.</li>
+                        <li class="flex items-start"><span class="w-2 h-2 bg-black rounded-full mt-2 mr-4 shrink-0"></span> Zalecamy czyszczenie tui od środka i usuwanie suchych gałązek. Utrzymuje to roślinę w zdrowiu, zapewniając dostęp światła i powietrza do pnia.</li>
+                    </ul>
+                    
+                    <p class="text-lg font-medium">Chętnie pomożemy Ci profesjonalnie zadbać o Twoje tuje.</p>
+                </div>
+                <div>
+                    <img src="img/img4.jpg" alt="Tuje" class="w-full h-96 object-cover rounded-2xl shadow-sm">
+                </div>
             </div>
         ` : ''}
 
@@ -174,6 +194,7 @@ const template = (p) => `<!DOCTYPE html>
                         <p class="leading-relaxed">Oferujemy pakiety od samej wycinki po kompleksowe zrębkowanie, wywóz urobku, frezowanie pni. Brak bezpośredniego dojazdu ciężkiego sprzętu również wpływa na wycenę.</p>
                     </div>
                 </div>
+                <img src="img/img6.jpg" alt="Cennik i Praca" class="w-full h-80 object-cover rounded-2xl shadow-sm mt-12">
             </div>
         ` : ''}
 
@@ -181,12 +202,12 @@ const template = (p) => `<!DOCTYPE html>
             <div class="max-w-5xl">
                 <p class="text-lg text-neutral-500 font-light leading-relaxed mb-12">Oto kilka zdjęć z naszych ostatnich realizacji w terenie.</p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-                    <img src="img/img1.jpg" alt="Realizacja 1" class="w-full h-64 object-cover rounded-xl shadow-sm transition duration-500">
-                    <img src="img/img2.jpg" alt="Realizacja 2" class="w-full h-64 object-cover rounded-xl shadow-sm transition duration-500">
-                    <img src="img/img3.jpg" alt="Realizacja 3" class="w-full h-64 object-cover rounded-xl shadow-sm transition duration-500">
-                    <img src="img/img4.jpg" alt="Realizacja 4" class="w-full h-64 object-cover rounded-xl shadow-sm transition duration-500">
-                    <img src="img/img5.jpg" alt="Realizacja 5" class="w-full h-64 object-cover rounded-xl shadow-sm transition duration-500">
-                    <img src="img/img6.jpg" alt="Realizacja 6" class="w-full h-64 object-cover rounded-xl shadow-sm transition duration-500">
+                    <img src="img/img1.jpg" alt="Realizacja 1" class="w-full h-64 object-cover rounded-xl shadow-sm">
+                    <img src="img/img2.jpg" alt="Realizacja 2" class="w-full h-64 object-cover rounded-xl shadow-sm">
+                    <img src="img/img3.jpg" alt="Realizacja 3" class="w-full h-64 object-cover rounded-xl shadow-sm">
+                    <img src="img/img4.jpg" alt="Realizacja 4" class="w-full h-64 object-cover rounded-xl shadow-sm">
+                    <img src="img/img5.jpg" alt="Realizacja 5" class="w-full h-64 object-cover rounded-xl shadow-sm">
+                    <img src="img/img6.jpg" alt="Realizacja 6" class="w-full h-64 object-cover rounded-xl shadow-sm">
                 </div>
             </div>
         ` : ''}
