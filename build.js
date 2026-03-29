@@ -48,7 +48,6 @@ const template = (p) => `<!DOCTYPE html>
                     <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4"></span> Indywidualne podejście.</li>
                     <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4"></span> Najnowszy park maszynowy i własny transport.</li>
                 </ul>
-                <p class="mt-12 text-lg font-medium">Jesteś w odpowiednim miejscu. Gwarantujemy to.</p>
             </div>
         ` : ''}
 
@@ -66,13 +65,26 @@ const template = (p) => `<!DOCTYPE html>
         ` : ''}
 
         ${p.name === 'kontakt.html' ? `
-            <p class="text-neutral-500 font-light mb-8">Zadzwoń do nas w sprawie wyceny.</p>
-            <a href="tel:123456789" class="text-2xl font-medium hover:underline">123 456 789</a>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 text-neutral-500 font-light">
+                <div>
+                    <h3 class="text-black font-medium text-lg mb-6">Informacje kontaktowe</h3>
+                    <p class="mb-2"><strong class="font-medium text-black">Palmar - Marcin Czubak</strong></p>
+                    <p class="mb-2">Łaguszew 17</p>
+                    <p class="mb-6">99-414 Łaguszew (Kocierzew Południowy)</p>
+                    <p class="mb-2"><strong class="font-medium text-black">Email:</strong> <a href="mailto:palmar.8776@gmail.com" class="hover:text-black transition">palmar.8776@gmail.com</a></p>
+                    <p class="mb-2"><strong class="font-medium text-black">Telefon:</strong> <a href="tel:783672957" class="hover:text-black transition">783 672 957</a></p>
+                </div>
+                <div>
+                    <h3 class="text-black font-medium text-lg mb-6">Godziny otwarcia</h3>
+                    <p class="mb-2">Poniedziałek — Piątek</p>
+                    <p class="text-black font-medium">08:00 - 18:00</p>
+                </div>
+            </div>
         ` : ''}
     </main>
 
     <footer class="w-full px-8 py-10 max-w-5xl mx-auto border-t border-neutral-100 mt-auto">
-        <p class="text-xs text-neutral-400 font-light">&copy; 2026 Palmar. Łowicz.</p>
+        <p class="text-xs text-neutral-400 font-light">&copy; 2026 Palmar - Wycinka drzew, pielęgnacja zieleni Marcin Czubak.</p>
     </footer>
 
 </body>
