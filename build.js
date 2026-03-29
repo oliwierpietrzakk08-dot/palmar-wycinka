@@ -52,14 +52,24 @@ const template = (p) => `<!DOCTYPE html>
         ` : ''}
 
         ${p.name === 'uslugi.html' ? `
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
                 <div>
-                    <h3 class="text-lg font-medium mb-4">Wycinka Drzew</h3>
+                    <h3 class="text-2xl font-medium mb-6">Wycinka Drzew</h3>
                     <p class="text-neutral-500 font-light leading-relaxed">Bezpieczna wycinka drzew trudnych, sekcyjna, z użyciem podnośnika lub metod alpinistycznych.</p>
                 </div>
                 <div>
-                    <h3 class="text-lg font-medium mb-4">Pielęgnacja Zieleni</h3>
-                    <p class="text-neutral-500 font-light leading-relaxed">Cięcia techniczne, formowanie koron, usuwanie suchych gałęzi oraz prześwietlanie.</p>
+                    <h3 class="text-2xl font-medium mb-6">Pielęgnacja Zieleni</h3>
+                    <p class="text-neutral-500 font-light leading-relaxed mb-6">Oferujemy kompleksowe utrzymanie terenów zielonych (prywatnych, przemysłowych, sportowych). Działamy wieloletnio lub interwencyjnie.</p>
+                    <ul class="space-y-3 text-neutral-500 font-light list-disc pl-5">
+                        <li>Koszenie i aeracja trawników</li>
+                        <li>Przycinanie krzewów i żywopłotów</li>
+                        <li>Karczowanie i wykaszanie zarośli</li>
+                        <li>Cięcia formujące i odmładzające</li>
+                        <li>Odchwaszczanie i pielenie</li>
+                        <li>Ścinka, formowanie i sadzenie drzew</li>
+                        <li>Nawożenie trawników, drzew i krzewów</li>
+                        <li>Ochrona chemiczna roślin</li>
+                    </ul>
                 </div>
             </div>
         ` : ''}
