@@ -21,27 +21,26 @@ const template = (p) => `<!DOCTYPE html>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #fcfcfc; color: #111; }
-        .dropdown:hover .dropdown-menu { display: block; }
+        .group:hover .group-hover\\:block { display: block; }
     </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col">
 
-    <header class="w-full px-8 py-6 flex justify-between items-center max-w-6xl mx-auto border-b border-neutral-100">
+    <header class="w-full px-6 py-6 flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto border-b border-neutral-100 gap-4">
         <a href="index.html" class="flex items-center text-xl font-medium tracking-tight">
-            <img src="img/logo.jpg" alt="Logo" class="h-10 w-auto mr-4 rounded-full"> Palmar<span class="text-neutral-500 font-light ml-2 hidden sm:inline">Wycinka Drzew</span>
+            <img src="img/logo.jpg" alt="Logo" class="h-10 w-10 mr-3 rounded-full object-cover"> Palmar<span class="text-neutral-500 font-light ml-2 hidden sm:inline">Wycinka Drzew</span>
         </a>
-        <nav class="flex items-center space-x-8 text-sm font-light text-neutral-600">
-            <a href="index.html" class="hover:text-black transition">Strona główna</a>
+        <nav class="flex flex-wrap justify-center items-center gap-x-6 gap-y-3 text-sm font-light text-neutral-600">
+            <a href="index.html" class="hover:text-black transition">Główna</a>
             <a href="o-nas.html" class="hover:text-black transition">O nas</a>
             
-            <!-- Usługi Dropdown -->
-            <div class="relative dropdown py-4">
-                <button class="hover:text-black transition flex items-center">
+            <div class="relative group py-2">
+                <button class="hover:text-black transition flex items-center focus:outline-none">
                     Usługi 
                     <svg class="w-3 h-3 ml-1 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
-                <div class="dropdown-menu absolute hidden text-black pt-4 z-50">
-                    <div class="bg-white border border-neutral-100 shadow-xl rounded-xl py-2 w-48 flex flex-col">
+                <div class="absolute left-1/2 -translate-x-1/2 md:left-0 md:translate-x-0 hidden group-hover:block text-black pt-2 z-50">
+                    <div class="bg-white border border-neutral-100 shadow-xl rounded-xl py-2 w-48 flex flex-col text-center md:text-left">
                         <a href="wycinka-drzew.html" class="px-4 py-2 hover:bg-neutral-50 transition">Wycinka drzew</a>
                         <a href="pielegnacja-zieleni.html" class="px-4 py-2 hover:bg-neutral-50 transition">Pielęgnacja zieleni</a>
                         <a href="tuje.html" class="px-4 py-2 hover:bg-neutral-50 transition">Tuje</a>
@@ -56,14 +55,17 @@ const template = (p) => `<!DOCTYPE html>
         </nav>
     </header>
 
-    <main class="flex-grow max-w-5xl mx-auto w-full px-8 py-16 sm:py-20">
-        <h1 class="text-4xl md:text-5xl font-light mb-16 tracking-tight max-w-2xl">${p.heading}</h1>
+    <main class="flex-grow max-w-5xl mx-auto w-full px-6 py-12 sm:py-20">
+        <h1 class="text-4xl md:text-5xl font-light mb-12 sm:mb-16 tracking-tight max-w-2xl text-center sm:text-left">${p.heading}</h1>
         
         ${p.name === 'index.html' ? `
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <p class="text-lg text-neutral-500 font-light mb-12 max-w-xl leading-relaxed">Specjalizujemy się w bezpiecznej wycince drzew, pielęgnacji zieleni i pracach wysokościowych. Działamy szybko, precyzyjnie i bezpiecznie.</p>
-                    <a href="kontakt.html" class="inline-block bg-black text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-neutral-800 transition shadow-lg">Sprawdź ofertę</a>
+                <div class="flex flex-col items-center sm:items-start text-center sm:text-left">
+                    <p class="text-lg text-neutral-500 font-light mb-10 max-w-xl leading-relaxed">Specjalizujemy się w bezpiecznej wycince drzew, pielęgnacji zieleni i pracach wysokościowych. Działamy szybko, precyzyjnie i bezpiecznie.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                        <a href="kontakt.html" class="inline-block text-center bg-black text-white px-8 py-3.5 rounded-full text-sm font-medium hover:bg-neutral-800 transition shadow-lg">Sprawdź ofertę</a>
+                        <a href="tel:783672957" class="inline-block text-center bg-white text-black border border-neutral-200 px-8 py-3.5 rounded-full text-sm font-medium hover:border-black transition shadow-sm">Zadzwoń: 783 672 957</a>
+                    </div>
                 </div>
                 <div>
                     <img src="img/main.jpg" alt="Palmar" class="w-full h-80 object-cover rounded-2xl shadow-sm">
@@ -77,15 +79,15 @@ const template = (p) => `<!DOCTYPE html>
                     <p class="text-lg text-neutral-500 font-light mb-8 leading-relaxed">Firma PALMAR powstała w 2021 roku, ale doświadczenie naszej załogi jest wieloletnie. Działamy głównie na terenie powiatu łowickiego, podejmując się również zleceń z innych obszarów. Pomagamy w zaprojektowaniu i utrzymaniu ogrodów oraz terenów zielonych.</p>
                     <h3 class="text-xl font-medium mb-6 mt-12">Co nas wyróżnia?</h3>
                     <ul class="space-y-4 text-neutral-500 font-light">
-                        <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4"></span> Jakość – budujemy na zaufaniu.</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4"></span> Terminowość – szanujemy Twój czas.</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4"></span> Konkurencyjne ceny.</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4"></span> Indywidualne podejście.</li>
-                        <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4"></span> Najnowszy park maszynowy i własny transport.</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4 shrink-0"></span> Jakość – budujemy na zaufaniu.</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4 shrink-0"></span> Terminowość – szanujemy Twój czas.</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4 shrink-0"></span> Konkurencyjne ceny.</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4 shrink-0"></span> Indywidualne podejście.</li>
+                        <li class="flex items-center"><span class="w-2 h-2 bg-black rounded-full mr-4 shrink-0"></span> Najnowszy park maszynowy i własny transport.</li>
                     </ul>
                 </div>
                 <div class="flex flex-col items-center">
-                    <img src="img/logo.jpg" alt="Logo Palmar" class="w-48 h-48 rounded-full shadow-lg border border-gray-100 object-cover">
+                    <img src="img/logo.jpg" alt="Logo Palmar" class="w-48 h-48 sm:w-64 sm:h-64 rounded-full shadow-lg border border-gray-100 object-cover">
                 </div>
             </div>
         ` : ''}
@@ -97,7 +99,7 @@ const template = (p) => `<!DOCTYPE html>
                     <p class="mb-2"><strong class="font-medium text-black">Palmar - Marcin Czubak</strong></p>
                     <p class="mb-2">Łaguszew 17</p>
                     <p class="mb-6">99-414 Łaguszew (Kocierzew Południowy)</p>
-                    <p class="mb-2"><strong class="font-medium text-black">Email:</strong> <a href="mailto:palmar.8776@gmail.com" class="hover:text-black transition">palmar.8776@gmail.com</a></p>
+                    <p class="mb-2"><strong class="font-medium text-black">Email:</strong> <a href="mailto:palmar.8776@gmail.com" class="hover:text-black transition break-all">palmar.8776@gmail.com</a></p>
                     <p class="mb-2"><strong class="font-medium text-black">Telefon:</strong> <a href="tel:783672957" class="hover:text-black transition text-lg">783 672 957</a></p>
                 </div>
                 <div>
@@ -107,23 +109,23 @@ const template = (p) => `<!DOCTYPE html>
                 </div>
             </div>
             <div class="mt-12">
-                <img src="img/img1.jpg" alt="Kontakt" class="w-full h-64 object-cover rounded-2xl shadow-sm object-top">
+                <img src="img/img1.jpg" alt="Kontakt" class="w-full h-48 sm:h-64 object-cover rounded-2xl shadow-sm object-top">
             </div>
         ` : ''}
 
         ${p.name === 'pielegnacja-zieleni.html' ? `
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div class="max-w-3xl">
-                    <p class="text-lg text-neutral-500 font-light leading-relaxed mb-8">Oferujmy usługi : pielęgnacja i utrzymania terenów zielonych na działkach prywatnych oraz terenach przemysłowych, sportowych oraz w miejscach publicznych. Świadczymy usługi w zakresie pielęgnacji i utrzymania terenów zieleni w cyklach wieloletnich oraz interwencyjnie.</p>
+                    <p class="text-lg text-neutral-500 font-light leading-relaxed mb-8">Oferujmy usługi: pielęgnacja i utrzymanie terenów zielonych na działkach prywatnych oraz terenach przemysłowych, sportowych oraz w miejscach publicznych. Świadczymy usługi w zakresie pielęgnacji i utrzymania terenów zieleni w cyklach wieloletnich oraz interwencyjnie.</p>
                     <h3 class="text-xl font-medium mb-6 mt-12">Oferujemy takie usługi jak:</h3>
                     <ul class="space-y-4 text-neutral-500 font-light">
-                        <li>koszenie trawy, przycinanie krzewów, żywopłotów,</li>
-                        <li>karczowanie zarośli, wykaszanie przerośniętych traw,</li>
-                        <li>cięcia formujące, odmładzające, korygujące roślin, odchwaszczanie,</li>
-                        <li>wycinka i pielęgnacja drzew, ścinkę i formowanie drzew,</li>
-                        <li>sadzenie drzew i krzewów, nawożenie trawników,</li>
-                        <li>renowacja i aeracja trawników,</li>
-                        <li>ochrona chemiczna roślin przed owadami i grzybami</li>
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-black rounded-full mt-2 mr-3 shrink-0"></span>koszenie trawy, przycinanie krzewów, żywopłotów,</li>
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-black rounded-full mt-2 mr-3 shrink-0"></span>karczowanie zarośli, wykaszanie przerośniętych traw,</li>
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-black rounded-full mt-2 mr-3 shrink-0"></span>cięcia formujące, odmładzające, korygujące roślin, odchwaszczanie,</li>
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-black rounded-full mt-2 mr-3 shrink-0"></span>wycinka i pielęgnacja drzew, ścinka i formowanie drzew,</li>
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-black rounded-full mt-2 mr-3 shrink-0"></span>sadzenie drzew i krzewów, nawożenie trawników,</li>
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-black rounded-full mt-2 mr-3 shrink-0"></span>renowacja i aeracja trawników,</li>
+                        <li class="flex items-start"><span class="w-1.5 h-1.5 bg-black rounded-full mt-2 mr-3 shrink-0"></span>ochrona chemiczna roślin przed owadami i grzybami</li>
                     </ul>
                 </div>
                 <div class="flex flex-col gap-6">
@@ -136,7 +138,7 @@ const template = (p) => `<!DOCTYPE html>
             <div class="max-w-4xl">
                 <p class="text-lg text-neutral-500 font-light leading-relaxed mb-12">Nasza firma oferuje kompleksowe usługi w zakresie wycinki oraz pielęgnacji drzew.</p>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-12">
                     <div>
                         <h3 class="text-xl font-medium mb-6">Wycinka drzew</h3>
                         <ul class="space-y-3 text-neutral-500 font-light list-disc pl-5">
@@ -165,7 +167,7 @@ const template = (p) => `<!DOCTYPE html>
                     </ul>
                 </div>
                 
-                <img src="img/img4.jpg" alt="Wycinka" class="w-full h-80 object-cover rounded-2xl shadow-sm mt-8 object-top">
+                <img src="img/img4.jpg" alt="Wycinka" class="w-full h-64 sm:h-80 object-cover rounded-2xl shadow-sm mt-8 object-top">
             </div>
         ` : ''}
 
@@ -184,7 +186,7 @@ const template = (p) => `<!DOCTYPE html>
                     <p class="text-lg font-medium">Chętnie pomożemy Ci profesjonalnie zadbać o Twoje tuje.</p>
                 </div>
                 <div>
-                    <img src="img/img3.jpg" alt="Tuje" class="w-full h-96 object-cover rounded-2xl shadow-sm object-bottom">
+                    <img src="img/img3.jpg" alt="Tuje" class="w-full h-80 sm:h-96 object-cover rounded-2xl shadow-sm object-bottom">
                 </div>
             </div>
         ` : ''}
@@ -195,7 +197,7 @@ const template = (p) => `<!DOCTYPE html>
                 
                 <h3 class="text-2xl text-black font-medium mb-8">Przy wycenie bierzemy pod uwagę:</h3>
                 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
                     <div>
                         <h4 class="text-lg text-black font-medium mb-3">Wielkość drzewa</h4>
                         <p class="leading-relaxed">Wysokość i średnica wpływają na czas pracy, zużycie sprzętu i ilość urobku do wywiezienia. Wspinaczka na wysokie drzewa wiąże się z większym ryzykiem.</p>
@@ -213,14 +215,14 @@ const template = (p) => `<!DOCTYPE html>
                         <p class="leading-relaxed">Oferujemy pakiety od samej wycinki po kompleksowe zrębkowanie, wywóz urobku, frezowanie pni. Brak bezpośredniego dojazdu ciężkiego sprzętu również wpływa na wycenę.</p>
                     </div>
                 </div>
-                <img src="img/img6.jpg" alt="Cennik i Praca" class="w-full h-80 object-cover rounded-2xl shadow-sm mt-12 object-bottom">
+                <img src="img/img6.jpg" alt="Cennik i Praca" class="w-full h-64 sm:h-80 object-cover rounded-2xl shadow-sm mt-12 object-bottom">
             </div>
         ` : ''}
 
         ${p.name === 'realizacje.html' ? `
-            <div class="max-w-5xl">
+            <div class="max-w-5xl w-full">
                 <p class="text-lg text-neutral-500 font-light leading-relaxed mb-12">Oto kilka zdjęć z naszych ostatnich realizacji w terenie.</p>
-                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     <img src="img/img4.jpg" alt="Realizacja 1" class="w-full h-64 object-cover rounded-xl shadow-sm object-top">
                     <img src="img/img2.jpg" alt="Realizacja 2" class="w-full h-64 object-cover rounded-xl shadow-sm">
                     <img src="img/img3.jpg" alt="Realizacja 3" class="w-full h-64 object-cover rounded-xl shadow-sm object-bottom">
@@ -233,7 +235,7 @@ const template = (p) => `<!DOCTYPE html>
 
     </main>
 
-    <footer class="w-full px-8 py-10 max-w-5xl mx-auto border-t border-neutral-100 mt-auto text-center">
+    <footer class="w-full px-6 py-10 max-w-5xl mx-auto border-t border-neutral-100 mt-auto text-center">
         <p class="text-xs text-neutral-400 font-light">&copy; 2026 Palmar - Wycinka drzew, pielęgnacja zieleni Marcin Czubak.</p>
     </footer>
 
