@@ -112,7 +112,7 @@ const template = (p) => `<!DOCTYPE html>
     </script>
     ` : ''}
 </head>
-<body class="antialiased min-h-screen flex flex-col">
+<body class="antialiased min-h-screen flex flex-col relative">
 
     <header class="w-full px-6 py-6 flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto border-b border-neutral-100 gap-4">
         <a href="index.html" class="flex items-center text-xl font-medium tracking-tight">
@@ -156,7 +156,7 @@ const template = (p) => `<!DOCTYPE html>
                     </div>
                 </div>
                 <div>
-                    <img src="img/main.jpg" alt="Bezpieczna wycinka drzew z podnośnika - Palmar" class="w-full h-80 object-cover rounded-2xl shadow-sm">
+                    <img src="img/main.jpg" alt="Bezpieczna wycinka drzew z podnośnika - Palmar" class="w-full h-80 object-cover rounded-2xl shadow-sm cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)">
                 </div>
             </div>
         ` : ''}
@@ -175,7 +175,7 @@ const template = (p) => `<!DOCTYPE html>
                     </ul>
                 </div>
                 <div class="flex flex-col items-center">
-                    <img src="img/logo.jpg" alt="Logo Palmar - doświadczona ekipa z Łowicza" class="w-48 h-48 sm:w-64 sm:h-64 rounded-full shadow-lg border border-gray-100 object-cover">
+                    <img src="img/logo.jpg" alt="Logo Palmar - doświadczona ekipa z Łowicza" class="w-48 h-48 sm:w-64 sm:h-64 rounded-full shadow-lg border border-gray-100 object-cover cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)">
                 </div>
             </div>
         ` : ''}
@@ -197,7 +197,7 @@ const template = (p) => `<!DOCTYPE html>
                 </div>
             </div>
             <div class="mt-12">
-                <img src="img/img1.jpg" alt="Pielęgnacja i wycinka drzew kontakt" class="w-full h-48 sm:h-64 object-cover rounded-2xl shadow-sm object-top">
+                <img src="img/img1.jpg" alt="Pielęgnacja i wycinka drzew kontakt" class="w-full h-48 sm:h-64 object-cover rounded-2xl shadow-sm object-top cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)">
             </div>
         ` : ''}
 
@@ -217,7 +217,7 @@ const template = (p) => `<!DOCTYPE html>
                     </ul>
                 </div>
                 <div class="flex flex-col gap-6">
-                    <img src="img/img5.jpg" alt="Pielęgnacja trawników i zieleni przez firmę Palmar" class="w-full h-64 object-cover rounded-2xl shadow-sm">
+                    <img src="img/img5.jpg" alt="Pielęgnacja trawników i zieleni przez firmę Palmar" class="w-full h-64 object-cover rounded-2xl shadow-sm cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)">
                 </div>
             </div>
         ` : ''}
@@ -255,7 +255,7 @@ const template = (p) => `<!DOCTYPE html>
                     </ul>
                 </div>
                 
-                <img src="img/img4.jpg" alt="Bezpieczna wycinka drzew trudnych i sekcyjnych" class="w-full h-64 sm:h-80 object-cover rounded-2xl shadow-sm mt-8 object-top">
+                <img src="img/img4.jpg" alt="Bezpieczna wycinka drzew trudnych i sekcyjnych" class="w-full h-64 sm:h-80 object-cover rounded-2xl shadow-sm mt-8 object-top cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)">
             </div>
         ` : ''}
 
@@ -274,7 +274,7 @@ const template = (p) => `<!DOCTYPE html>
                     <p class="text-lg font-medium">Chętnie pomożemy Ci profesjonalnie zadbać o Twoje tuje.</p>
                 </div>
                 <div>
-                    <img src="img/img3.jpg" alt="Pielęgnacja i przycinanie tui w ogrodzie" class="w-full h-80 sm:h-96 object-cover rounded-2xl shadow-sm object-bottom">
+                    <img src="img/img3.jpg" alt="Pielęgnacja i przycinanie tui w ogrodzie" class="w-full h-80 sm:h-96 object-cover rounded-2xl shadow-sm object-bottom cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)">
                 </div>
             </div>
         ` : ''}
@@ -303,20 +303,20 @@ const template = (p) => `<!DOCTYPE html>
                         <p class="leading-relaxed">Oferujemy pakiety od samej wycinki po kompleksowe zrębkowanie, wywóz urobku, frezowanie pni. Brak bezpośredniego dojazdu ciężkiego sprzętu również wpływa na wycenę.</p>
                     </div>
                 </div>
-                <img src="img/img6.jpg" alt="Frezowanie pni i prace glebowe - sprzęt Palmar" class="w-full h-64 sm:h-80 object-cover rounded-2xl shadow-sm mt-12 object-bottom">
+                <img src="img/img6.jpg" alt="Frezowanie pni i prace glebowe - sprzęt Palmar" class="w-full h-64 sm:h-80 object-cover rounded-2xl shadow-sm mt-12 object-bottom cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)">
             </div>
         ` : ''}
 
         ${p.name === 'realizacje.html' ? `
             <div class="max-w-5xl w-full">
-                <p class="text-lg text-neutral-500 font-light leading-relaxed mb-12">Oto kilka zdjęć z naszych ostatnich realizacji w terenie.</p>
+                <p class="text-lg text-neutral-500 font-light leading-relaxed mb-12">Oto kilka zdjęć z naszych ostatnich realizacji w terenie. Kliknij zdjęcie, aby je powiększyć.</p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <img src="img/img4.jpg" alt="Wycinka alpinistyczna drzewa realizacja" class="w-full h-64 object-cover rounded-xl shadow-sm object-top">
-                    <img src="img/img2.jpg" alt="Pielęgnacja terenów zielonych realizacja" class="w-full h-64 object-cover rounded-xl shadow-sm">
-                    <img src="img/img3.jpg" alt="Cięcie żywopłotu z tui realizacja" class="w-full h-64 object-cover rounded-xl shadow-sm object-bottom">
-                    <img src="img/img1.jpg" alt="Praca pilarza przy wycince drzewa realizacja" class="w-full h-64 object-cover rounded-xl shadow-sm object-top">
-                    <img src="img/img5.jpg" alt="Utrzymanie zieleni miejskiej realizacja" class="w-full h-64 object-cover rounded-xl shadow-sm">
-                    <img src="img/img6.jpg" alt="Prace zrębkowania gałęzi realizacja" class="w-full h-64 object-cover rounded-xl shadow-sm object-bottom">
+                    <img src="img/img4.jpg" alt="Wycinka alpinistyczna drzewa realizacja" class="w-full h-64 object-cover rounded-xl shadow-sm object-top cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)">
+                    <img src="img/img2.jpg" alt="Pielęgnacja terenów zielonych realizacja" class="w-full h-64 object-cover rounded-xl shadow-sm cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)">
+                    <img src="img/img3.jpg" alt="Cięcie żywopłotu z tui realizacja" class="w-full h-64 object-cover rounded-xl shadow-sm object-bottom cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)">
+                    <img src="img/img1.jpg" alt="Praca pilarza przy wycince drzewa realizacja" class="w-full h-64 object-cover rounded-xl shadow-sm object-top cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)">
+                    <img src="img/img5.jpg" alt="Utrzymanie zieleni miejskiej realizacja" class="w-full h-64 object-cover rounded-xl shadow-sm cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)">
+                    <img src="img/img6.jpg" alt="Prace zrębkowania gałęzi realizacja" class="w-full h-64 object-cover rounded-xl shadow-sm object-bottom cursor-pointer hover:opacity-90 transition" onclick="openLightbox(this.src)">
                 </div>
             </div>
         ` : ''}
@@ -326,6 +326,37 @@ const template = (p) => `<!DOCTYPE html>
     <footer class="w-full px-6 py-10 max-w-5xl mx-auto border-t border-neutral-100 mt-auto text-center">
         <p class="text-xs text-neutral-400 font-light">&copy; 2026 Palmar - Wycinka drzew, pielęgnacja zieleni Marcin Czubak.</p>
     </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 bg-black/90 z-[100] hidden flex items-center justify-center opacity-0 transition-opacity duration-300 backdrop-blur-sm cursor-zoom-out" onclick="closeLightbox()">
+        <button class="absolute top-6 right-6 text-white text-4xl hover:text-gray-300 transition focus:outline-none">&times;</button>
+        <img id="lightbox-img" src="" class="max-w-[90vw] max-h-[90vh] object-contain rounded-xl shadow-2xl cursor-default" onclick="event.stopPropagation()">
+    </div>
+
+    <script>
+        function openLightbox(src) {
+            const lb = document.getElementById('lightbox');
+            const img = document.getElementById('lightbox-img');
+            img.src = src;
+            lb.classList.remove('hidden');
+            // Allow display:block to apply before changing opacity
+            requestAnimationFrame(() => {
+                lb.classList.remove('opacity-0');
+            });
+        }
+        function closeLightbox() {
+            const lb = document.getElementById('lightbox');
+            lb.classList.add('opacity-0');
+            setTimeout(() => {
+                lb.classList.add('hidden');
+                document.getElementById('lightbox-img').src = '';
+            }, 300);
+        }
+        // Close on Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
 
 </body>
 </html>`;
