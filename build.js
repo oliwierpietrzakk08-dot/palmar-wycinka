@@ -100,7 +100,42 @@ const template = (p) => `<!DOCTYPE html>
             </div>
         ` : ''}
 
-        ${!['index.html', 'o-nas.html', 'kontakt.html', 'pielegnacja-zieleni.html'].includes(p.name) ? `
+        ${p.name === 'wycinka-drzew.html' ? `
+            <div class="max-w-4xl">
+                <p class="text-lg text-neutral-500 font-light leading-relaxed mb-12">Nasza firma oferuje kompleksowe usługi w zakresie wycinki oraz pielęgnacji drzew.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-xl font-medium mb-6">Wycinka drzew</h3>
+                        <ul class="space-y-3 text-neutral-500 font-light list-disc pl-5">
+                            <li>metodą tradycyjną (obalanie w całości),</li>
+                            <li>trudnych z wykorzystaniem metod alpinistycznych,</li>
+                            <li>na cmentarzach metodami alpinistycznymi,</li>
+                            <li>z podnośnika.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-medium mb-6">Cięcie drzew</h3>
+                        <ul class="space-y-3 text-neutral-500 font-light list-disc pl-5">
+                            <li><strong>sanitarne:</strong> usuwanie konarów i gałęzi chorych, martwych, połamanych,</li>
+                            <li><strong>pielęgnacyjne:</strong> wykonywane w celu poprawienia stanu zdrowotnego lub stanu technicznego,</li>
+                            <li><strong>techniczne:</strong> korygowanie drzew kolidujących z budynkami, liniami energetycznymi.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <h3 class="text-xl font-medium mb-6">Usługi dodatkowe towarzyszące</h3>
+                    <ul class="space-y-3 text-neutral-500 font-light list-disc pl-5">
+                        <li>Wywóz oraz utylizacja drewna i gałęzi,</li>
+                        <li>Zrębkowanie gałęzi,</li>
+                        <li>Frezowanie pni.</li>
+                    </ul>
+                </div>
+            </div>
+        ` : ''}
+
+        ${!['index.html', 'o-nas.html', 'kontakt.html', 'pielegnacja-zieleni.html', 'wycinka-drzew.html'].includes(p.name) ? `
             <p class="text-neutral-500 font-light">Treść w przygotowaniu na podstawie kolejnych linków...</p>
         ` : ''}
 
