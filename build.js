@@ -19,23 +19,40 @@ const template = (p) => `<!DOCTYPE html>
     <title>${p.title}</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-    <style>body { font-family: 'Inter', sans-serif; background-color: #fcfcfc; color: #111; }</style>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #fcfcfc; color: #111; }
+        .dropdown:hover .dropdown-menu { display: block; }
+    </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col">
 
-    <header class="w-full px-8 py-8 flex flex-col items-center max-w-6xl mx-auto gap-8 border-b border-neutral-100">
-        <a href="index.html" class="flex items-center text-2xl font-medium tracking-tight">
-            <img src="img/logo.jpg" alt="Logo" class="h-10 w-auto mr-4 rounded-full"> Palmar<span class="text-neutral-500 font-light ml-2">Wycinka Drzew</span>
+    <header class="w-full px-8 py-6 flex justify-between items-center max-w-6xl mx-auto border-b border-neutral-100">
+        <a href="index.html" class="flex items-center text-xl font-medium tracking-tight">
+            <img src="img/logo.jpg" alt="Logo" class="h-10 w-auto mr-4 rounded-full"> Palmar<span class="text-neutral-500 font-light ml-2 hidden sm:inline">Wycinka Drzew</span>
         </a>
-        <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm font-light text-neutral-600">
+        <nav class="flex items-center space-x-8 text-sm font-light text-neutral-600">
             <a href="index.html" class="hover:text-black transition">Strona główna</a>
             <a href="o-nas.html" class="hover:text-black transition">O nas</a>
-            <a href="kontakt.html" class="hover:text-black transition">Kontakt</a>
-            <a href="pielegnacja-zieleni.html" class="hover:text-black transition">Pielęgnacja zieleni</a>
-            <a href="wycinka-drzew.html" class="hover:text-black transition">Wycinka drzew</a>
-            <a href="tuje.html" class="hover:text-black transition">Tuje</a>
-            <a href="cennik.html" class="hover:text-black transition">Cennik</a>
+            
+            <!-- Usługi Dropdown -->
+            <div class="relative dropdown py-4">
+                <button class="hover:text-black transition flex items-center">
+                    Usługi 
+                    <svg class="w-3 h-3 ml-1 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="dropdown-menu absolute hidden text-black pt-4 z-50">
+                    <div class="bg-white border border-neutral-100 shadow-xl rounded-xl py-2 w-48 flex flex-col">
+                        <a href="wycinka-drzew.html" class="px-4 py-2 hover:bg-neutral-50 transition">Wycinka drzew</a>
+                        <a href="pielegnacja-zieleni.html" class="px-4 py-2 hover:bg-neutral-50 transition">Pielęgnacja zieleni</a>
+                        <a href="tuje.html" class="px-4 py-2 hover:bg-neutral-50 transition">Tuje</a>
+                        <div class="border-t border-neutral-100 my-1"></div>
+                        <a href="cennik.html" class="px-4 py-2 hover:bg-neutral-50 transition">Cennik</a>
+                    </div>
+                </div>
+            </div>
+
             <a href="realizacje.html" class="hover:text-black transition">Realizacje</a>
+            <a href="kontakt.html" class="hover:text-black transition">Kontakt</a>
         </nav>
     </header>
 
@@ -46,7 +63,7 @@ const template = (p) => `<!DOCTYPE html>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
                     <p class="text-lg text-neutral-500 font-light mb-12 max-w-xl leading-relaxed">Specjalizujemy się w bezpiecznej wycince drzew, pielęgnacji zieleni i pracach wysokościowych. Działamy szybko, precyzyjnie i bezpiecznie.</p>
-                    <a href="kontakt.html" class="inline-block bg-black text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-neutral-800 transition">Sprawdź ofertę</a>
+                    <a href="kontakt.html" class="inline-block bg-black text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-neutral-800 transition shadow-lg">Sprawdź ofertę</a>
                 </div>
                 <div>
                     <img src="img/main.jpg" alt="Palmar" class="w-full h-80 object-cover rounded-2xl shadow-sm">
@@ -81,7 +98,7 @@ const template = (p) => `<!DOCTYPE html>
                     <p class="mb-2">Łaguszew 17</p>
                     <p class="mb-6">99-414 Łaguszew (Kocierzew Południowy)</p>
                     <p class="mb-2"><strong class="font-medium text-black">Email:</strong> <a href="mailto:palmar.8776@gmail.com" class="hover:text-black transition">palmar.8776@gmail.com</a></p>
-                    <p class="mb-2"><strong class="font-medium text-black">Telefon:</strong> <a href="tel:783672957" class="hover:text-black transition">783 672 957</a></p>
+                    <p class="mb-2"><strong class="font-medium text-black">Telefon:</strong> <a href="tel:783672957" class="hover:text-black transition text-lg">783 672 957</a></p>
                 </div>
                 <div>
                     <h3 class="text-black font-medium text-lg mb-6">Godziny otwarcia</h3>
